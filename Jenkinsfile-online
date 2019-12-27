@@ -14,7 +14,7 @@ pipeline {
         GITHUB_CREDENTIAL_ID = 'github-id'
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
         REGISTRY = 'docker.io'
-        DOCKERHUB_NAMESPACE = 'docker_username'
+        DOCKERHUB_NAMESPACE = 'mzshenyan'
         GITHUB_ACCOUNT = 'kubesphere'
         APP_NAME = 'devops-java-sample'
         SONAR_CREDENTIAL_ID= 'sonar-token'
@@ -35,7 +35,7 @@ pipeline {
             }
         }
 
-        stage('sonarqube analysis') {
+        /*stage('sonarqube analysis') {
           steps {
             container ('maven') {
               withCredentials([string(credentialsId: "$SONAR_CREDENTIAL_ID", variable: 'SONAR_TOKEN')]) {
@@ -48,7 +48,7 @@ pipeline {
               }
             }
           }
-        }
+        }*/
 
         stage ('build & push') {
             steps {
